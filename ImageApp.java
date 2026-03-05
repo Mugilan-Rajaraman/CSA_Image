@@ -76,10 +76,12 @@ public class ImageApp {
     Pixel[][] rotatePixels2 = rotateImg2.getPixels2D();
     for (int i = 0; i < rotatePixels2.length; i++) {
       for (int j = 0; j < rotatePixels2[i].length; j++) {
-        Pixel rotatepix2 = rotatePixels2[i][j];
-        rotatepix2.setRed(rotatePixels2[j][rotatePixels2.length - 1 - i].getRed());
-        rotatepix2.setGreen(rotatePixels2[j][rotatePixels2.length - 1 - i].getGreen());
-        rotatepix2.setBlue(rotatePixels2[j][rotatePixels2.length - 1 - i].getBlue());
+        if (j < rotatePixels2.length && (rotatePixels2.length - 1 - i) < rotatePixels2[j].length) {
+          Pixel rotatepix2 = rotatePixels2[i][j];
+          rotatepix2.setRed(rotatePixels2[j][rotatePixels2.length - 1 - i].getRed());
+          rotatepix2.setGreen(rotatePixels2[j][rotatePixels2.length - 1 - i].getGreen());
+          rotatepix2.setBlue(rotatePixels2[j][rotatePixels2.length - 1 - i].getBlue());
+        }
       }
     }
     rotateImg2.explore();
@@ -91,9 +93,11 @@ public class ImageApp {
     Pixel[][] rotatePixels21 = rotateImg21.getPixels2D();
     for (int i = 0; i < rotatePixels21.length; i++) {
       for (int j = 0; j < rotatePixels21[i].length; j++) {
-        rotatePixels21[j][rotatePixels21.length - 1 - i].setRed(rotatePixels21[i][j].getRed());
-        rotatePixels21[j][rotatePixels21.length - 1 - i].setGreen(rotatePixels21[i][j].getGreen());
-        rotatePixels21[j][rotatePixels21.length - 1 - i].setBlue(rotatePixels21[i][j].getBlue());
+        if (j < rotatePixels21.length && (rotatePixels21.length - 1 - i) < rotatePixels21[j].length) {
+          rotatePixels21[j][rotatePixels21.length - 1 - i].setRed(rotatePixels21[i][j].getRed());
+          rotatePixels21[j][rotatePixels21.length - 1 - i].setGreen(rotatePixels21[i][j].getGreen());
+          rotatePixels21[j][rotatePixels21.length - 1 - i].setBlue(rotatePixels21[i][j].getBlue());
+        }
       }
     }
     rotateImg2.explore();
@@ -161,10 +165,12 @@ public class ImageApp {
     Pixel[][] rotatePixels = rotateImg.getPixels2D();
     for (int i = 0; i < rotatePixels.length; i++) {
       for (int j = 0; j < rotatePixels[i].length; j++) {
-        Pixel rotatepix = rotatePixels[i][j];
-        rotatepix.setRed(rotatePixels[j][rotatePixels.length - 1 - i].getRed());
-        rotatepix.setGreen(rotatePixels[j][rotatePixels.length - 1 - i].getGreen());
-        rotatepix.setBlue(rotatePixels[j][rotatePixels.length - 1 - i].getBlue());
+        if (j < rotatePixels.length && (rotatePixels.length - 1 - i) < rotatePixels[j].length) {
+          Pixel rotatepix = rotatePixels[i][j];
+          rotatepix.setRed(rotatePixels[j][rotatePixels.length - 1 - i].getRed());
+          rotatepix.setGreen(rotatePixels[j][rotatePixels.length - 1 - i].getGreen());
+          rotatepix.setBlue(rotatePixels[j][rotatePixels.length - 1 - i].getBlue());
+        }
       }
     }
     rotateImg.explore();
@@ -176,9 +182,11 @@ public class ImageApp {
     Pixel[][] rotatePixels22 = rotateImg22.getPixels2D();
     for (int i = 0; i < rotatePixels22.length; i++) {
       for (int j = 0; j < rotatePixels22[i].length; j++) {
-        rotatePixels22[j][rotatePixels22.length - 1 - i].setRed(rotatePixels22[i][j].getRed());
-        rotatePixels22[j][rotatePixels22.length - 1 - i].setGreen(rotatePixels22[i][j].getGreen());
-        rotatePixels2[j][rotatePixels2.length - 1 - i].setBlue(rotatePixels2[i][j].getBlue());
+        if (j < rotatePixels22.length && (rotatePixels22.length - 1 - i) < rotatePixels22[j].length) {
+          rotatePixels22[j][rotatePixels22.length - 1 - i].setRed(rotatePixels22[i][j].getRed());
+          rotatePixels22[j][rotatePixels22.length - 1 - i].setGreen(rotatePixels22[i][j].getGreen());
+          rotatePixels22[j][rotatePixels22.length - 1 - i].setBlue(rotatePixels22[i][j].getBlue());
+        }
       }
     }
     rotateImg2.explore();
